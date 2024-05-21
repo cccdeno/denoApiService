@@ -1,5 +1,22 @@
 
 
+## 在 github pages 中執行失敗
+
+因為在 https 網頁中，不能 fetch http 類型的網站
+
+```
+params= Object
+webFetch.js:12 Mixed Content: The page at 'https://ccckmit.github.io/denoSaas/webfetch/test/webFetchEx.html' was loaded over HTTPS, but requested an insecure resource 'http://172.104.100.202:8008/fetch'. This request has been blocked; the content must be served over HTTPS.
+webFetch @ webFetch.js:12
+webFetch.js:12          Uncaught TypeError: Failed to fetch
+    at webFetch (webFetch.js:12:19)
+    at webFetchEx.js:3:18
+/favicon.ico:1          Failed to load resource: the server responded with a status of 404 ()
+DevTools failed to load source map: Could not load content for chrome-extension://cofdbpoegempjloogbagkncekinflcnj/build/content.js.map: System error: net::ERR_BLOCKED_BY_CLIENT
+```
+
+## 在 localhost 中執行成功
+
 * http://localhost:4507/test/webFetchEx.html
 
 在瀏覽器開發人員工具中
