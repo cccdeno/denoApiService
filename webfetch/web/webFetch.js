@@ -1,4 +1,4 @@
-let gateUrl = "http://127.0.0.1:8008/fetch"
+let gateUrl = "http://172.104.100.202:8008/fetch"
 
 export async function webFetch(o) {
     let params = {
