@@ -31,5 +31,13 @@ export async function uploadHandler(ctx) {
     const body = await ctx.request.body({ type: 'form-data' })
     const data = await body.value.read()
     console.log(data)
-    ctx.response.body = 'success!'
+    console.log("fields=", data.fields)
+    let r = []
+    for (let f of data.files) {
+        console.log("filename=", f.filename)
+        console.log("originalName=", f.originalName)
+        await Deno.copyFile(f.filename, `./upload/${f.originalName}`)    
+        r.push({file:f.originalName})
+    }
+    ctx.response.body = r
 }
