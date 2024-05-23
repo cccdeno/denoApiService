@@ -36,7 +36,8 @@ export async function uploadHandler(ctx) {
     for (let f of data.files) {
         console.log("filename=", f.filename)
         console.log("originalName=", f.originalName)
-        await Deno.copyFile(f.filename, `./upload/${f.originalName}`)    
+        await Deno.copyFile(f.filename, `./upload/${f.originalName}`)
+        await Deno.remove(f.filename)
         r.push({file:f.originalName})
     }
     ctx.response.body = r

@@ -5,8 +5,8 @@ import { sqlHandler, fetchHandler, uploadHandler } from './handler.js'
 const app = new Application()
 const router = new Router()
 
-router.post('/sqlite', sqlHandler)
 router.post('/fetch', fetchHandler)
+router.post('/sqlite', sqlHandler)
 router.post('/upload', uploadHandler)
 
 app.use(oakCors()); // Enable CORS for All Routes
