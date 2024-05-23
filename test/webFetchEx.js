@@ -1,4 +1,4 @@
-import {webFetch} from '../web/webFetch.js'
+import {webFetch} from '../lib/webFetch.js'
 
 let text = await webFetch({
     url: 'https://example.com/',
